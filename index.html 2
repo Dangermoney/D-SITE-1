@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DANGER $$$ — Desert Psych Rock</title>
+  <meta name="description" content="DANGER $$$ — Desert Psych Rock from Phoenix, Arizona.">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: #fffdf8;
+      color: #191919;
+      overflow-x: hidden;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 20px 5%;
+
+      background: rgba(255, 253, 248, 0.88);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-family: "Anton", sans-serif;
+      font-size: 30px;
+      letter-spacing: 2px;
+      color: #111;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #e85d2a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #191919;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: #e85d2a;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 120px 20px 60px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #fffaf0 0%,
+          #ffd9a8 48%,
+          #ef9b65 72%,
+          #d96d42 100%
+        );
+    }
+
+    /* SUN */
+
+    .sun {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+
+      border-radius: 50%;
+
+      background: #fff1b8;
+
+      top: 17%;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      box-shadow:
+        0 0 80px rgba(255, 224, 142, 0.9),
+        0 0 160px rgba(255, 184, 105, 0.5);
+    }
+
+    /* MOUNTAINS */
+
+    .mountains {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      height: 48%;
+
+      overflow: hidden;
+    }
+
+    .mountain-back {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+
+      background: #b85f4a;
+
+      clip-path: polygon(
+        0 72%,
+        12% 52%,
+        20% 67%,
+        32% 38%,
+        43% 63%,
+        54% 42%,
+        67% 66%,
+        80% 45%,
+        91% 64%,
+        100% 48%,
+        100% 100%,
+        0 100%
+      );
+    }
+
+    .mountain-front {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80%;
+
+      background: #713c39;
+
+      clip-path: polygon(
+        0 72%,
+        15% 58%,
+        27% 73%,
+        40% 46%,
+        53% 72%,
+        66% 51%,
+        79% 75%,
+        90% 57%,
+        100% 70%,
+        100% 100%,
+        0 100%
+      );
+    }
+
+    /* HERO CONTENT */
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      max-width: 1000px;
+    }
+
+    .eyebrow {
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 20px;
+      color: #57332e;
+    }
+
+    .hero h1 {
+      font-family: "Anton", sans-serif;
+
+      font-size: clamp(90px, 17vw, 230px);
+
+      line-height: 0.8;
+
+      letter-spacing: -4px;
+
+      color: #171717;
+
+      text-shadow:
+        7px 7px 0 #f6c05e;
+    }
+
+    .hero h1 span {
+      color: #e85d2a;
+    }
+
+    .hero-subtitle {
+      margin-top: 35px;
+
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+
+      color: #3d2927;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+
+      padding: 15px 28px;
+
+      border-radius: 100px;
+
+      text-decoration: none;
+
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      transition: 0.2s ease;
+    }
+
+    .button-dark {
+      background: #191919;
+      color: white;
+    }
+
+    .button-orange {
+      background: #e85d2a;
+      color: white;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 110px 7%;
+    }
+
+    .section-title {
+      font-family: "Anton", sans-serif;
+
+      font-size: clamp(50px, 8vw, 100px);
+
+      line-height: 0.9;
+
+      margin-bottom: 45px;
+
+      letter-spacing: -2px;
+    }
+
+    .section-title span {
+      color: #e85d2a;
+    }
+
+    /* MUSIC */
+
+    #music {
+      background: #fffdf8;
+    }
+
+    .music-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 30px;
+    }
+
+    .music-card {
+      background: #f4eadb;
+
+      border-radius: 20px;
+
+      padding: 40px;
+
+      min-height: 250px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .music-card h3 {
+      font-family: "Anton", sans-serif;
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .music-card p {
+      color: #665d56;
+      margin-bottom: 20px;
+    }
+
+    /* SHOWS */
+
+    #shows {
+      background: #1d1b1a;
+      color: white;
+    }
+
+    .show {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 25px 0;
+
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .show-date {
+      font-family: "Anton", sans-serif;
+      font-size: 40px;
+      color: #f6c05e;
+    }
+
+    .show-info h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .show-info p {
+      color: #aaa;
+    }
+
+    /* ABOUT */
+
+    .about {
+      max-width: 850px;
+    }
+
+    .about p {
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    /* MERCH */
+
+    #merch {
+      background: #f6c05e;
+    }
+
+    .merch-box {
+      background: #fffdf8;
+      border-radius: 25px;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .merch-box h3 {
+      font-family: "Anton", sans-serif;
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    /* CONTACT */
+
+    #contact {
+      background: #fffdf8;
+      text-align: center;
+    }
+
+    .contact-big {
+      font-family: "Anton", sans-serif;
+
+      font-size: clamp(55px, 10vw, 130px);
+
+      line-height: 0.85;
+
+      margin-bottom: 35px;
+    }
+
+    .contact-big span {
+      color: #e85d2a;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      color: #191919;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .socials a:hover {
+      color: #e85d2a;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #191919;
+      color: #aaa;
+
+      text-align: center;
+
+      padding: 35px 20px;
+
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 16px 20px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .hero h1 {
+        font-size: 100px;
+        text-shadow: 4px 4px 0 #f6c05e;
+      }
+
+      .sun {
+        width: 190px;
+        height: 190px;
+      }
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .show {
+        gap: 15px;
+      }
+
+      .show-date {
+        font-size: 27px;
+      }
+
+      .show-info h3 {
+        font-size: 16px;
+      }
+
+      .show-info p {
+        font-size: 13px;
+      }
+
+      .merch-box {
+        padding: 35px 20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="#home" class="logo">DANGER <span>$$$</span></a>
+
+    <ul class="nav-links">
+      <li><a href="#music">Music</a></li>
+      <li><a href="#shows">Shows</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#merch">Merch</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="sun"></div>
+
+    <div class="mountains">
+      <div class="mountain-back"></div>
+      <div class="mountain-front"></div>
+    </div>
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Phoenix, Arizona
+      </div>
+
+      <h1>
+        DANGER<br>
+        <span>$$$</span>
+      </h1>
+
+      <div class="hero-subtitle">
+        Desert Psych Rock
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#music" class="button button-dark">
+          Listen
+        </a>
+
+        <a href="#shows" class="button button-orange">
+          See Shows
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MUSIC -->
+
+  <section id="music">
+
+    <div class="section-title">
+      MUSIC<span>.</span>
+    </div>
+
+    <div class="music-grid">
+
+      <div class="music-card">
+        <h3>LISTEN</h3>
+        <p>Stream DANGER $$$ wherever you listen to music.</p>
+
+        <a href="#" class="button button-dark">
+          Spotify
+        </a>
+      </div>
+
+      <div class="music-card">
+        <h3>WATCH</h3>
+        <p>Live performances, music videos & desert transmissions.</p>
+
+        <a href="#" class="button button-orange">
+          YouTube
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SHOWS -->
+
+  <section id="shows">
+
+    <div class="section-title">
+      SHOWS<span>.</span>
+    </div>
+
+    <!-- Replace these with real shows -->
+
+    <div class="show">
+
+      <div class="show-date">
+        NOV 01
+      </div>
+
+      <div class="show-info">
+        <h3>DANGER $$$ — DEBUT SHOW</h3>
+        <p>Overdue Vintage — Phoenix, AZ</p>
+      </div>
+
+    </div>
+
+    <div class="show">
+
+      <div class="show-date">
+        DEC 20
+      </div>
+
+      <div class="show-info">
+        <h3>PHOENIX HOMESTEADS BLOCK PARTY</h3>
+        <p>Phoenix, Arizona</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="section-title">
+      WHO IS<br>
+      DANGER <span>$$$?</span>
+    </div>
+
+    <div class="about">
+
+      <p>
+        DANGER $$$ is desert psych rock from Phoenix, Arizona.
+        Four people making loud music, chasing strange sounds,
+        and turning the desert into something dangerous.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- MERCH -->
+
+  <section id="merch">
+
+    <div class="section-title">
+      MERCH<span>.</span>
+    </div>
+
+    <div class="merch-box">
+
+      <h3>COMING SOON</h3>
+
+      <p>
+        Shirts, records, weird stuff and DANGER $$$ artifacts.
+      </p>
+
+      <br>
+
+      <a href="#contact" class="button button-dark">
+        Get Updates
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="contact-big">
+      BOOK<br>
+      DANGER <span>$$$</span>
+    </div>
+
+    <p>
+      For shows, collaborations, press & general danger.
+    </p>
+
+    <br>
+
+    <div class="socials">
+
+      <a href="#">
+        Instagram
+      </a>
+
+      <a href="#">
+        TikTok
+      </a>
+
+      <a href="#">
+        Email
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <strong>DANGER $$$</strong> — PHOENIX, ARIZONA — © 2026
+  </footer>
+
+
+</body>
+</html>
